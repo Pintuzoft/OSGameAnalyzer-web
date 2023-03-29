@@ -1,8 +1,8 @@
 <?php
 
 $mysql_host = "10.0.1.41";
-$mysql_database = "knivhelg";
-$mysql_user = "knivhelg";
-$mysql_password = "knivhelg";
+$mysql_database = "gameanalyzer";
+$mysql_user = "gameanalyzer";
+$mysql_password = "gameanalyzer";
 
 ?>
