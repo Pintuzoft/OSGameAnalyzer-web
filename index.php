@@ -60,7 +60,7 @@ echo "             <table id='eventlist' class='table table-bordered' style='bac
 
 echo "              <thead class='table-dark'>\n";
 echo "                <tr>\n";
-echo "                  <th class='col-2'>Time</th>\n";
+echo "                  <th class='col-1'>Time</th>\n";
 echo "                  <th class='col-1'>Server</th>\n";
 echo "                  <th class='col-1'>Map</th>\n";
 echo "                  <th class='col-2'>Attacker</th>\n";
@@ -74,7 +74,7 @@ echo "              <tbody>\n";
 $eList = getEventList ( );
 foreach ( $eList->getArray() as $event ) {
     echo "                <tr >\n";
-    echo "                  <td class='col-2'>".$event->getStamp()."</td>\n";
+    echo "                  <td class='col-1'>".$event->getStamp()."</td>\n";
     echo "                  <td class='col-1'>".$event->getServer()."</td>\n";
     echo "                  <td class='col-1'>".$event->getMap()."</td>\n";
     echo "                  <td class='col-2'>".$event->getAttacker()."</td>\n";
