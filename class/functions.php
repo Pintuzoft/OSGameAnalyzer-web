@@ -5,7 +5,7 @@ include_once 'arraylist.php';
 function getEventList ( ) {
     global $mysql;
     $eList = new ArrayList ( );
-    $query = "SELECT stamp,killer,victim,info,type FROM event ORDER BY stamp DESC";
+    $query = "SELECT stamp,killer,victim,info FROM event ORDER BY stamp DESC";
     $stmt = $mysql->prepare ( $query ) or die ( "Error: " . $mysql->getError ( ) );
     $stmt->execute ( ) or die ( "Error: " . $mysql->getError ( ) );
     $stmt->store_result ( );
