@@ -32,7 +32,7 @@ class Event {
     }
 
     public function getInfo() {
-        return $this->points;
+        return $this->info;
     }
 
 }
