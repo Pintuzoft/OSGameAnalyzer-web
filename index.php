@@ -30,7 +30,7 @@ echo "    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.ne
 
 echo "  </head>\n";
 
-echo "  <body style=\"background-image:url('images/battlefield.png');background-repeat: no-repeat; background-color:#282828; color:#EFEFEF\">\n";
+echo "  <body style=\"background-image:url('images/battlefield.jpg');background-repeat: no-repeat; background-color:#282828; color:#EFEFEF\">\n";
   
 /* HEADER */
 echo "    <div id='header' class='container-fluid'>\n";
