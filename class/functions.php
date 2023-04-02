@@ -9,7 +9,7 @@ function getEventList ( ) {
     $stmt = $mysql->prepare ( $query ) or die ( "Error: " . $mysql->getError ( ) );
     $stmt->execute ( ) or die ( "Error: " . $mysql->getError ( ) );
     $stmt->store_result ( );
-    $stmt->bind_result ( $stamp, $server, map, $killer, $victim, $info ) or die ( "Error: " . $mysql->getError ( ) );
+    $stmt->bind_result ( $stamp, $server, $map, $killer, $victim, $info ) or die ( "Error: " . $mysql->getError ( ) );
     while ( $stmt->fetch ( ) ) {
         $eList->add ( new Event ( $stamp, $server, $map, $killer, $victim, $info ) );
     }
