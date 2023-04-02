@@ -54,7 +54,7 @@ echo "              <ul>\n";
 echo "              </ul>\n";
 echo "          </div>\n";
 
-echo "          <div id='content-middle' class='col col-10'>\n";
+echo "          <div id='content-middle' class='col col-12'>\n";
 echo "            <h4 style='color:#fbb204'>Latest events</h4>\n";
 echo "             <table id='eventlist' class='table table-bordered' style='background-color: #FAFAFA;'>\n";
 
