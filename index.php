@@ -63,8 +63,8 @@ echo "                <tr>\n";
 echo "                  <th class='col-2'>Time</th>\n";
 echo "                  <th class='col-1'>Server</th>\n";
 echo "                  <th class='col-1'>Map</th>\n";
-echo "                  <th class='col-3'>Attacker</th>\n";
-echo "                  <th class='col-3'>Victim</th>\n";
+echo "                  <th class='col-2'>Attacker</th>\n";
+echo "                  <th class='col-2'>Victim</th>\n";
 echo "                  <th class='col-3'>Information</th>\n";
 echo "                </tr>\n";
 echo "              </thead>\n";
@@ -77,8 +77,8 @@ foreach ( $eList->getArray() as $event ) {
     echo "                  <td class='col-2'>".$event->getStamp()."</td>\n";
     echo "                  <td class='col-1'>".$event->getServer()."</td>\n";
     echo "                  <td class='col-1'>".$event->getMap()."</td>\n";
-    echo "                  <td class='col-3'>".$event->getAttacker()."</td>\n";
-    echo "                  <td class='col-3'>".$event->getVictim()."</td>\n";
+    echo "                  <td class='col-2'>".$event->getAttacker()."</td>\n";
+    echo "                  <td class='col-2'>".$event->getVictim()."</td>\n";
     echo "                  <td class='col-3'>".$event->getInfo()."</td>\n";
     echo "                </tr>\n";
 }
