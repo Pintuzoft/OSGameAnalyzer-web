@@ -60,9 +60,9 @@ echo "             <table id='eventlist' class='table table-bordered' style='bac
 
 echo "              <thead class='table-dark'>\n";
 echo "                <tr>\n";
-echo "                  <th class='col-3'>Time</th>\n";
-echo "                  <th class='col-2'>Server</th>\n";
-echo "                  <th class='col-2'>Map</th>\n";
+echo "                  <th class='col-2'>Time</th>\n";
+echo "                  <th class='col-1'>Server</th>\n";
+echo "                  <th class='col-1'>Map</th>\n";
 echo "                  <th class='col-3'>Attacker</th>\n";
 echo "                  <th class='col-3'>Victim</th>\n";
 echo "                  <th class='col-3'>Information</th>\n";
@@ -74,9 +74,9 @@ echo "              <tbody>\n";
 $eList = getEventList ( );
 foreach ( $eList->getArray() as $event ) {
     echo "                <tr >\n";
-    echo "                  <td class='col-3'>".$event->getStamp()."</td>\n";
-    echo "                  <td class='col-2'>".$event->getServer()."</td>\n";
-    echo "                  <td class='col-2'>".$event->getMap()."</td>\n";
+    echo "                  <td class='col-2'>".$event->getStamp()."</td>\n";
+    echo "                  <td class='col-1'>".$event->getServer()."</td>\n";
+    echo "                  <td class='col-1'>".$event->getMap()."</td>\n";
     echo "                  <td class='col-3'>".$event->getAttacker()."</td>\n";
     echo "                  <td class='col-3'>".$event->getVictim()."</td>\n";
     echo "                  <td class='col-3'>".$event->getInfo()."</td>\n";
