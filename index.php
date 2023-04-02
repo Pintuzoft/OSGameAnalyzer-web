@@ -71,22 +71,11 @@ echo "              <tbody>\n";
 
 $eList = getEventList ( );
 foreach ( $eList->getArray() as $event ) {
-    $isTeamKill = ( $event->getType() == 1 );
-    $rowClass = "";
-    if ( $isTeamKill ) {
-        $rowClass = "class='table-danger'";
-    }
-    echo "                <tr ".$rowClass.">\n";
+    echo "                <tr >\n";
     echo "                  <td class='col-3'>".$event->getStamp()."</td>\n";
-    if ( $isTeamKill ) {
-        echo "                  <td class='col-3'>".$event->getAttacker()." [-".$event->getPoints()."p]</td>\n";
-        echo "                  <td class='col-3'>".$event->getVictim()." [+".$event->getPoints()."p]</td>\n";    
-    } else {
-        echo "                  <td class='col-3'>".$event->getAttacker()." [+".$event->getPoints()."p]</td>\n";
-        echo "                  <td class='col-3'>".$event->getVictim()."</td>\n";    
-    }
-    echo "                  <td class='col-3'>".$event->getInfo()."</td>\n";    
-
+    echo "                  <td class='col-3'>".$event->getAttacker()."</td>\n";
+    echo "                  <td class='col-3'>".$event->getVictim()."</td>\n";
+    echo "                  <td class='col-3'>".$event->getInfo()."</td>\n";
     echo "                </tr>\n";
 }
 

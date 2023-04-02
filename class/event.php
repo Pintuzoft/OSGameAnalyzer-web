@@ -9,20 +9,14 @@
 class Event {
     private $stamp;
     private $attacker;
-    private $attackerid;
     private $victim;
-    private $victimid;
-    private $points;
-    private $type;
+    private $info;
 
-    public function __construct($stamp, $attacker, $attackerid, $victim, $victimid, $points, $type) {
+    public function __construct($stamp, $attacker, $victim, $info) {
         $this->stamp = $stamp;
         $this->attacker = $attacker;
-        $this->attackerid = $attackerid;
         $this->victim = $victim;
-        $this->victimid = $victimid;
-        $this->points = $points;
-        $this->type = $type;
+        $this->info = $info;
     }
 
     public function getStamp() {
@@ -33,24 +27,13 @@ class Event {
         return $this->attacker;
     }
 
-    public function getAttackerID() {
-        return $this->attackerid;
-    }
-
     public function getVictim() {
         return $this->victim;
     }
 
-    public function getVictimID() {
-        return $this->victimid;
-    }
-    
-    public function getPoints() {
+    public function getInfo() {
         return $this->points;
     }
 
-    public function getType() {
-        return $this->type;
-    }
 }
 ?>
