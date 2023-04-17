@@ -10,14 +10,16 @@ class Event {
     private $stamp;
     private $server;
     private $map;
+    private $round;
     private $attacker;
     private $victim;
     private $info;
 
-    public function __construct($stamp, $server, $map, $attacker, $victim, $info) {
+    public function __construct($stamp, $server, $map, $round, $attacker, $victim, $info) {
         $this->stamp = $stamp;
         $this->server = $server;
         $this->map = $map;
+        $this->round = $round;
         $this->attacker = $attacker;
         $this->victim = $victim;
         $this->info = $info;
@@ -33,6 +35,10 @@ class Event {
 
     public function getMap() {
         return $this->map;
+    }
+
+    public function getRound() {
+        return $this->round;
     }
 
     public function getAttacker() {
