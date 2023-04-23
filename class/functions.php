@@ -44,6 +44,7 @@ function getTopPlayers( ) {
     global $mysql;
     $playerList = new ArrayList();
     $query = "SELECT killer_steamid, killer_name, COUNT(*) as kills, 
+                     (SELECT COUNT(*) FROM kills WHERE victim_steamid = killer_steamid) as deaths,
                      SUM(headshot) as headshots, 
                      SUM(suicide) as suicides, 
                      SUM(teamkill) as teamkills,
@@ -55,17 +56,17 @@ function getTopPlayers( ) {
               ORDER BY kills DESC";
               
     $stmt = $mysql->prepare($query) or die("Error: " . $mysql->getError());
+    $stmt->bind_param('i', $limit) or die("Error: " . $mysql->getError());
     $stmt->execute() or die("Error: " . $mysql->getError());
     $stmt->store_result();
-    $stmt->bind_result($steamid, $name, $kills, $headshots, $suicides, $teamkills, $penetrated, $thrusmoke, $blinded) or die("Error: " . $mysql->getError());
+    $stmt->bind_result($steamid, $name, $kills, $deaths, $headshots, $suicides, $teamkills, $penetrated, $thrusmoke, $blinded) or die("Error: " . $mysql->getError());
 
     while ($stmt->fetch()) {
-        $player = new Player($steamid, $name, $kills, $headshots, $suicides, $teamkills, $penetrated, $thrusmoke, $blinded);
+        $player = new Player($steamid, $name, $kills, $deaths, $headshots, $suicides, $teamkills, $penetrated, $thrusmoke, $blinded);
         $playerList->add($player);
     }
 
     return $playerList;
 }
-
 
 ?>

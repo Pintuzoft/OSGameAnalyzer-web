@@ -1,19 +1,21 @@
 <?php
 class Player {
-    private $steamid;
-    private $name;
-    private $kills;
-    private $headshots;
-    private $suicides;
-    private $teamkills;
-    private $penetrated;
-    private $thrusmoke;
-    private $blinded;
+    public $steamid;
+    public $name;
+    public $kills;
+    public $deaths;
+    public $headshots;
+    public $suicides;
+    public $teamkills;
+    public $penetrated;
+    public $thrusmoke;
+    public $blinded;
 
-    public function __construct($steamid, $name, $kills, $headshots, $suicides, $teamkills, $penetrated, $thrusmoke, $blinded) {
+    public function __construct($steamid, $name, $kills, $deaths, $headshots, $suicides, $teamkills, $penetrated, $thrusmoke, $blinded) {
         $this->steamid = $steamid;
         $this->name = $name;
         $this->kills = $kills;
+        $this->deaths = $deaths;
         $this->headshots = $headshots;
         $this->suicides = $suicides;
         $this->teamkills = $teamkills;
@@ -32,6 +34,10 @@ class Player {
 
     public function getKills() {
         return $this->kills;
+    }
+
+    public function getDeaths() {
+        return $this->deaths;
     }
 
     public function getHeadshots() {
