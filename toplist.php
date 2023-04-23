@@ -76,7 +76,7 @@ echo "              <tbody>\n";
 
 $pList = getTopPlayers ( );
 foreach ( $pList->getArray() as $player ) {
-    int $index = 1;
+    $index = 1;
     echo "                <tr >\n";
     echo "                  <td class='col-1'>".$index++."</td>\n";
     echo "                  <td class='col-2'>".$player->getName()."</td>\n";
