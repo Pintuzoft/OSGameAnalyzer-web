@@ -43,15 +43,17 @@ MariaDB [gameanalyzer]> desc kills;
 function getTopPlayers( ) {
     global $mysql;
     $playerList = new ArrayList();
-    $query = "SELECT killer_steamid, killer_name, COUNT(*) as kills, 
-                     (SELECT COUNT(*) FROM kills WHERE victim_steamid = killer_steamid) as deaths,
-                     SUM(headshot) as headshots, 
-                     SUM(suicide) as suicides, 
-                     SUM(teamkill) as teamkills,
-                     SUM(penetrated) as penetrated, 
-                     SUM(thrusmoke) as thrusmoke, 
-                     SUM(blinded) as blinded
-              FROM kills
+    $query = "SELECT k.killer_steamid, 
+                     k.killer_name, 
+                     (SELECT COUNT(*) FROM kills WHERE killer_steamid = k.killer_steamid) as kills, 
+                     (SELECT COUNT(*) FROM kills WHERE victim_steamid = k.killer_steamid) as deaths,
+                     SUM(k.headshot) as headshots, 
+                     SUM(k.suicide) as suicides, 
+                     SUM(k.teamkill) as teamkills,
+                     SUM(k.penetrated) as penetrated, 
+                     SUM(k.thrusmoke) as thrusmoke, 
+                     SUM(k.blinded) as blinded
+              FROM kills as k
               GROUP BY killer_steamid, killer_name
               ORDER BY kills DESC";
               
