@@ -56,7 +56,6 @@ function getTopPlayers( ) {
               ORDER BY kills DESC";
               
     $stmt = $mysql->prepare($query) or die("Error: " . $mysql->getError());
-    $stmt->bind_param('i', $limit) or die("Error: " . $mysql->getError());
     $stmt->execute() or die("Error: " . $mysql->getError());
     $stmt->store_result();
     $stmt->bind_result($steamid, $name, $kills, $deaths, $headshots, $suicides, $teamkills, $penetrated, $thrusmoke, $blinded) or die("Error: " . $mysql->getError());
